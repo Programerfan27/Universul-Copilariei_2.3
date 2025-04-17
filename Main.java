@@ -1,28 +1,57 @@
-public class Main {
+public class UniversulCopilarieiAnimat {
 
     public static void main(String[] args) throws InterruptedException {
-        String soare = "    \\   |   /   \n" +
-                       "     .-'☀'-.\n" +
-                       "  ― (   o   ) ―\n" +
-                       "     '-._.-'\n" +
-                       "    /   |   \\";
+        String[] soare = {
+                "     \\   |   /    ",
+                "      .-'☀'-._    ",
+                "  ― (    o    ) ― ",
+                "      `-._.-'     ",
+                "     /   |   \\    "
+        };
+
+        String iarba = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
+        String copac =
+                "      🌳        \n" +
+                "     /|\\       \n" +
+                "    //|\\\\      \n" +
+                "     |||        \n" +
+                "     |||        ";
+
+        String nor =
+                "      ☁☁☁       \n" +
+                "    ☁☁☁☁☁      \n" +
+                "      ☁☁☁       ";
 
         for (int i = 10; i >= 0; i--) {
-            // Curățăm ecranul (doar simulare în consolă)
+            // Șterge ecranul (doar vizual, nu funcționează în toate consolele)
             System.out.print("\033[H\033[2J");
             System.out.flush();
 
-            // Afișăm spații verticale pentru efectul de „ridicare”
+            // Spațiu vertical pentru efectul de ridicare a soarelui
             for (int j = 0; j < i; j++) {
                 System.out.println();
             }
 
-            System.out.println(soare);
-            System.out.println("\n Iarba verde de acasă...");
+            // Desenează soarele
+            for (String linie : soare) {
+                System.out.println("   " + linie);
+            }
 
-            Thread.sleep(500); // pauză de 0.5 secunde între cadre
+            // Adaugă norul sus
+            if (i < 5) {
+                System.out.println("\n\n" + nor);
+            }
+
+            // Adaugă copacul
+            System.out.println("\n\n" + copac);
+
+            // Adaugă iarba
+            System.out.println("\n" + iarba);
+
+            Thread.sleep(400); // așteaptă 0.4 secunde
         }
 
-        System.out.println("\n Soarele a răsărit! Bună dimineața, copilărie!");
+        System.out.println("\n🌞 Soarele a răsărit deasupra copilăriei!");
+        System.out.println("💛 O zi frumoasă în Universul Copilăriei începe acum!");
     }
 }
